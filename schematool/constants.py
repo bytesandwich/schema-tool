@@ -12,6 +12,7 @@ class Constants(object):
         {'command': 'up',       'handler': 'UpCommand'},
         {'command': 'down',     'handler': 'DownCommand'},
         {'command': 'rebuild',  'handler': 'RebuildCommand'},
+        {'command': 'fill',     'handler': 'FillCommand'},
         {'command': 'gen-ref',  'handler': 'GenRefCommand'},
         {'command': 'resolve',  'handler': 'ResolveCommand'},
         {'command': 'init',     'handler': 'InitCommand'},

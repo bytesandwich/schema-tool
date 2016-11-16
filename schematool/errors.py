@@ -45,3 +45,6 @@ class CircularRefError(Exception):
 
 class InitError(Exception):
     pass
+
+class FillPathError(Exception):
+    pass

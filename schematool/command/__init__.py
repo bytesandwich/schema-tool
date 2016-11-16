@@ -8,5 +8,6 @@ from list    import ListCommand
 from up      import UpCommand
 from down    import DownCommand
 from rebuild import RebuildCommand
+from fill    import FillCommand
 from gen_sql import GenSqlCommand
 from init    import InitCommand

@@ -34,7 +34,7 @@ import errors
 # These will not be used directly, but dynamically based on user-input
 # and the mapping in Constants
 from command import (ListCommand, GenSqlCommand, UpCommand, ResolveCommand, 
-                     GenRefCommand, NewCommand, RebuildCommand, Command, 
+                     GenRefCommand, NewCommand, RebuildCommand, FillCommand, Command, 
                      CheckCommand, InitCommand, DownCommand)
 
 
@@ -51,6 +51,7 @@ def main():
         "  up          Bring up to particular revision",
         "  down        Roll back to a particular revision",
         "  rebuild     Run the entire database down and back up (hard refresh)",
+        "  fill        Apply non-production database fill sql for dev/test",
         "  gen-ref     Generate new file-ref",
         "  gen-sql     Generate SQL for a given reference, including revision-history alter(s)",
         "  resolve     Resolve a divergent-branch conflict (found by 'check' command)",
@@ -77,7 +78,7 @@ def main():
     config = load_config()
     config_errors = CommandContext.validate_config(config)
     if not len(config_errors) == 0:
-        sys.stderr.write("Error: Configigurations are not valid:\n")
+        sys.stderr.write("Error: Configurations are not valid:\n")
         for error in config_errors:
             sys.stderr.write("\t%s\n" % error)
         sys.exit(1)
